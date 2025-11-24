@@ -1,0 +1,115 @@
+/* consulta.css */
+
+/* Estrutura principal e padding */
+.content { 
+    padding: 100px 20px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    color: white; 
+}
+
+/* Título e Cabeçalho - Garante Centralização */
+.content h2 { 
+    text-align: center;
+    color: white; 
+    font-size: 3em; 
+    margin: 0 auto 30px auto; /* Centraliza o elemento H2 */
+    font-family: 'nulshock', sans-serif; 
+}
+
+/* Formulário de Busca - Centralização e Alinhamento */
+.search-form { 
+    margin-bottom: 20px; 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; /* Centraliza a barra de pesquisa */
+    align-items: center; 
+}
+.search-form input[type="text"] { 
+    padding: 10px; 
+    width: 300px; 
+    border-radius: 5px; 
+    border: 1px solid #444; 
+    background-color: #333; 
+    color: white;
+}
+
+/* Botões de Ação (Buscar/Limpar) - Estilos e Prioridade */
+.search-form button, 
+.search-form a.search-form { 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Estilo do botão Buscar (Laranja) */
+.search-form button[type="submit"] {
+    background-color: #f0a92d; 
+    color: #333; 
+}
+
+/* Estilo do botão Limpar (Cinza Escuro) */
+.search-form a.search-form {
+    background-color: #555; 
+    color: white; 
+}
+.search-form a.search-form:hover {
+    background-color: #777;
+}
+
+/* Tabela de Usuários - Centralização e Estilo */
+.user-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 30px auto 0 auto; /* Centraliza a tabela */
+    background-color: #1f1e1e; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.user-table th { 
+    background-color: #f0a92d; 
+    color: #333; 
+    padding: 12px; 
+    text-align: left; 
+}
+.user-table td { 
+    padding: 12px; 
+    border: 1px solid #444; 
+    color: white; 
+}
+.user-table tr:nth-child(even) { background-color: #222; }
+.user-table tr:hover {
+    background-color: #333; 
+}
+
+/* Links de Ações na Tabela */
+.promote-link { 
+    color: #2ecc71; 
+    font-weight: bold; 
+    text-decoration: none; 
+    margin-right: 10px;
+}
+.demote-link { 
+    color: #f0a92d; 
+    font-weight: bold; 
+    text-decoration: none; 
+    margin-right: 10px;
+}
+.delete-btn { 
+    background-color: #e74c3c; 
+    color: white; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-left: 10px;
+}
+.delete-btn:hover {
+    background-color: #c0392b;
+}
