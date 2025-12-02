@@ -124,6 +124,7 @@ try {
         </ul>
     </nav>
 </div>
+
 <div class="content">
     
     <h2>LOGS DE AUTENTICAÇÃO</h2> 

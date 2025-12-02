@@ -115,10 +115,6 @@ unset($_SESSION['success_message']);
 </head>
 <body>
 
-<button id="toggleContraste" style="position: fixed; top: 100px; right: 20px; z-index: 1001; padding: 8px 12px; background-color: #f0a92d; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-    Modo Claro
-</button>
-
 <div class="nav-container">
     <nav>
         <div class="logo">

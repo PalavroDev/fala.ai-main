@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.1">
   <link rel="stylesheet" href="css/register.css">
   <link rel="icon" href="imagens/favicon.ico.ico" type="image/x-icon" />
-  <title>Cadastro </title>
+  <title>Cadastro - Fitplan Academy</title>
 </head>
 <body>
 
@@ -19,26 +17,10 @@
         <ul class="nav-links">
             <li><a href="index.php">Home</a></li>
             <li><a href="sobre.php">Sobre</a></li>
-            
-            <?php 
-            // Links visíveis apenas para o perfil 'master'
-            if (isset($_SESSION['user_profile']) && $_SESSION['user_profile'] === 'master'): ?>
-                <li><a href="consulta_usuarios.php">Consultar Usuários</a></li>
-                <li><a href="tela_log.php">Logs de Acesso</a></li>
-                <li><a href="cadastro_planos.php">Gestão Planos</a></li> 
-                <li><a href="assinaturas.php">Vendas/Assinaturas</a></li> <li><a href="tela_modelo_bd.php">Modelo do BD</a></li>
-            <?php endif; ?>
-
-            <?php
-            // Link visível APENAS para usuários logados (Master ou Comum)
-            if (isset($_SESSION['user_id'])): ?>
-                <li><a href="alterar_senha.php">Alterar Senha</a></li> 
-            <?php endif; ?>
-            
             <li><a href="https://chat.whatsapp.com/G4rDsuICjOt00291r1Uru6">Contato</a></li>
             <li>
                 <div class="user-actions">
-                    <?php if (isset($_SESSION['user_id'])): ?> 
+                    <?php if (isset($_SESSION['user_id'])): ?>
                         <span class="welcome-message">Olá, <?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
                         <a href="php/logout.php" class="logout-btn">Sair</a>
                     <?php else: ?>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="icon" href="imagens/favicon.ico.ico" type="image/x-icon" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <div class="logo">
+          <img src="imagens/logo.svg" alt="logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li>
+            <a href="https://chat.whatsapp.com/G4rDsuICjOt00291r1Uru6"
+              >Contato</a
+            >
+          </li>
+          <li><div class="user-actions"></div></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="login-box">
+      <div class="login-header">
+        <header>Cadastro</header>
+      </div>
+
+      <form id="cadastroForm">
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            id="nome"
+            placeholder="Nome Completo*"
+            required
+            minlength="15"
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            id="nasc"
+            placeholder="Data de Nascimento*"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <select class="input-field" id="sexo" required>
+            <option value="">Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            id="login"
+            placeholder="Login*"
+            maxlength="6"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            id="cpf"
+            placeholder="CPF*"
+            maxlength="14"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="email"
+            class="input-field"
+            id="email"
+            placeholder="Email*"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            id="celular"
+            placeholder="Telefone Celular*"
+            maxlength="15"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="password"
+            class="input-field"
+            id="senha"
+            placeholder="Senha*"
+            maxlength="8"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="password"
+            class="input-field"
+            id="confirmaSenha"
+            placeholder="Confirmar Senha*"
+            maxlength="8"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            placeholder="Cep"
+            name="cep"
+            type="text"
+            id="cep"
+            maxlength="9"
+            class="input-field"
+            onblur="pesquisacep(this.value);"
+          />
+          <button type="button" onclick="buscarCEPManualmente()" class="submit-btncep">Buscar CEP</button>
+          <br>
+          <br>
+          <input
+            placeholder="Rua"
+            name="rua"
+            type="text"
+            id="rua"
+            class="input-field"
+          />
+          <input
+            placeholder="Bairro"
+            name="bairro"
+            type="text"
+            id="bairro"
+            class="input-field"
+          />
+          <input
+            placeholder="Cidade"
+            name="cidade"
+            type="text"
+            id="cidade"
+            class="input-field"
+          />
+          <input
+            placeholder="Estado"
+            name="uf"
+            type="text"
+            id="uf"
+            maxlength="2"
+            class="input-field"
+          />
+        </div>
+
+        <div class="input-submit">
+          <button type="submit" class="submit-btn">Cadastrar-se</button>
+        </div>
+          <br>
+
+        <div class="input-submit">
+          <button type="submit" class="submit-btn" onclick="limparCampos()">Limpar</button>
+        </div>
+
+        <div id="erroCadastro" style="color: red; margin-top: 10px"></div>
+
+        <div class="sign-up-link">
+          <p>Já possui uma conta? <a href="login.html">Logar</a></p>
+        </div>
+      </form>
+    </div>
+
+<div id="popupErro" class="popup-erro">
+  <div class="popup-conteudo">
+    <span id="fecharPopup" class="fechar">&times;</span>
+    <p id="mensagemErro">Mensagem de erro vai aqui</p>
+  </div>
+</div>
+
+
+    <script src="js/teste2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+    <script>
+      // Máscaras
+      $(document).ready(function () {
+        $("#celular").mask("(+55) 00 00000-0000");
+        $("#cpf").mask("000.000.000-00", { reverse: true });
+        $("#nasc").mask("00/00/0000");
+      });
+      
+    </script>
+  </body>
+</html>

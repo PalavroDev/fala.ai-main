@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 // Função para validar o CPF (lógica do dígito verificador)
 function validaCPF($cpf) {

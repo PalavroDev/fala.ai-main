@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+    <link
+      href="https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="imagens/favicon.ico.ico" type="image/x-icon" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <div class="logo">
+          <img src="imagens/logo.svg" alt="logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li>
+            <a href="https://chat.whatsapp.com/G4rDsuICjOt00291r1Uru6"
+              >Contato</a
+            >
+          </li>
+          <li>
+            <div class="user-actions"></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="login-box">
+      <div class="login-header">
+        <header>Login</header>
+      </div>
+
+      <form id="loginForm">
+        <div class="input-box">
+        <input
+          type="text"
+          class="input-field"
+          id="login"
+          placeholder="Login"
+          autocomplete="off"
+          required
+        />
+        </div>
+
+        <div class="input-box">
+          <input
+            type="password"
+            class="input-field"
+            id="senha"
+            placeholder="Senha"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="forgot">
+          <section>
+            <input type="checkbox" id="check" />
+            <label for="check">Lembrar-me</label>
+          </section>
+          <section>
+            <a href="#">Esqueceu a senha?</a>
+          </section>
+        </div>
+
+        <div class="input-submit">
+          <button type="submit" class="submit-btn" id="loginBtn">Logar</button>
+        </div>
+      </form>
+
+      <div class="sign-up-link">
+        <p>Não possui uma conta? <a href="register.html">Cadastre-se</a></p>
+      </div>
+    </div>
+
+    <div id="popupErro" class="popup-erro">
+      <div class="popup-conteudo">
+        <span id="fecharPopup" class="fechar">&times;</span>
+        <p id="mensagemErro">Mensagem de erro vai aqui</p>
+      </div>
+    </div>
+
+
+  <script src="js/auth.js"></script>
+  <script src="js/teste2.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const botaoLogin = document.getElementById("loginBtn");
+
+    if (botaoLogin) {
+      botaoLogin.addEventListener("click", function () {
+        // Captura os valores dos campos
+        const login = document.getElementById("login")?.value.trim();
+        const senha = document.getElementById("senha")?.value.trim();
+
+        // Validação
+        if (!validarLogin(login, senha)) return;
+
+        // Tenta logar
+        if (fazerLogin(login, senha)) {
+          alert("Login bem-sucedido!");
+          window.location.href = "index.html";
+        } else {
+          document.getElementById("mensagemErro").textContent = "Login ou senha inválidos.";
+          document.getElementById("popupErro").style.display = "block";
+        }
+      });
+    }
+  });
+</script>
+
+  </body>
+</html>
